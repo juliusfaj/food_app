@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppSliders extends StatelessWidget {
@@ -24,6 +25,13 @@ class AppSliders extends StatelessWidget {
     "semo layers"
   ];
 
+  List<String> popularPizzaPrice = [
+    "\$2.99",
+    "\$3.99",
+    "\$4.99",
+    "\$5.99",
+  ];
+
   List<double> prices = [2.99, 3.99, 4.99, 5.99];
 
   @override
@@ -40,7 +48,7 @@ class AppSliders extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding:  EdgeInsets.only(right: 8.0),
+                  padding: EdgeInsets.only(right: 8.0),
                   child: Text(
                     'View all',
                     style: TextStyle(
@@ -56,18 +64,62 @@ class AppSliders extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(
-          height: 200.0,
-          child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: popularImages.length,
-              itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Text(popularPizza[index])
-              ],
-            );
-          }),
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: SizedBox(
+            height: 270.0,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: popularImages.length,
+                itemBuilder: (context, index) {
+                  return Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Container(
+                          width: 183.0,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 5.0,
+                              color: Colors.grey.withOpacity(0.1),
+                            ),
+                            borderRadius: BorderRadius.circular(10.0)
+                          ),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                popularImages[index],
+                                width: 150.0,
+                              ),
+                              Text(
+                                popularPizza[index],
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 1.0, bottom: 10.0),
+                                child: Text(
+                                  popularPizzaSubText[index],
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.grey),
+                                ),
+                              ),
+                              Text(
+                                popularPizzaPrice[index],
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  );
+                }),
+          ),
         )
       ],
     );
