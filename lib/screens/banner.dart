@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_app/screens/sliders.dart';
 
@@ -142,6 +143,18 @@ class AppBanner extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
           child: AppSliders(),
+        ),
+
+        Spacer(),
+        BottomAppBar(
+          color: Colors.red.shade500,
+          height: 20.0,
+
+          child: Row(
+            children: [
+              Text('funnso ')
+            ],
+          ),
         )
       ],
     );
