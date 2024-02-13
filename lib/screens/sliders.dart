@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppSliders extends StatelessWidget {
   AppSliders({Key? key}) : super(key: key);
 
-  List<String> popularImages = [
+ List<String> popularImages = [
     "images/pizza-5991179_1920.png",
     "images/pizza-5991179_1920.png",
     "images/pizza-5991179_1920.png",
@@ -65,7 +64,7 @@ class AppSliders extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: const EdgeInsets.only(top: 40.0),
           child: SizedBox(
             height: 270.0,
             child: ListView.builder(
@@ -93,7 +92,7 @@ class AppSliders extends StatelessWidget {
                               ),
                               Text(
                                 popularPizza[index],
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -102,13 +101,13 @@ class AppSliders extends StatelessWidget {
                                     top: 1.0, bottom: 10.0),
                                 child: Text(
                                   popularPizzaSubText[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 15.0, color: Colors.grey),
                                 ),
                               ),
                               Text(
                                 popularPizzaPrice[index],
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold),
                               )

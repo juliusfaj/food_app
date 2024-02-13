@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_app/screens/sliders.dart';
 
 class AppBanner extends StatelessWidget {
   AppBanner({Key? key}) : super(key: key);
 
-  List<String> categories = ["Pizza", "Burger", "Sushi", "Noodles"];
+  final List<String> categories = ["Pizza", "Burger", "Sushi", "Noodles"];
 
   @override
   Widget build(BuildContext context) {
@@ -103,13 +102,13 @@ class AppBanner extends StatelessWidget {
             )), // Banner padding
 
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+          padding:const  EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Categories',
-                style: TextStyle(
+                style:TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 17.0,
                 ),
@@ -141,21 +140,66 @@ class AppBanner extends StatelessWidget {
         ),
 
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
           child: AppSliders(),
         ),
 
-        Spacer(),
-        BottomAppBar(
-          color: Colors.red.shade500,
-          height: 20.0,
+        const Spacer(),
 
-          child: Row(
-            children: [
-              Text('funnso ')
-            ],
+        Container(
+          color: Colors.red.shade500,
+          height: kBottomNavigationBarHeight,
+          child: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              children: [
+                Column(
+
+
+                  children: [
+                    Icon(Icons.home, color: Colors.grey),
+                    Text("Home", style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),)
+
+                  ],
+                ),
+
+                Column(
+                  children: [
+                    Icon(Icons.store,color: Colors.grey,),
+                    Text("Store", style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),)
+
+                  ],
+                ),Column(
+                  children: [
+                    Icon(Icons.category,color: Colors.grey,),
+                    Text("Category", style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),)
+
+                  ],
+                ),Column(
+                  children: [
+                    Icon(Icons.settings,color: Colors.grey,),
+                    Text("Settings", style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),)
+
+                  ],
+                ),
+              ],
+            ),
           ),
-        )
+        ),
       ],
     );
   }
