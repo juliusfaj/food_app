@@ -12,30 +12,31 @@ class AppBanner extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // App bar widget
-        Padding(
-          padding: const EdgeInsets.only( left: 10.0, right: 10.0, bottom: 20.0),
-          child: AppBar(
-            centerTitle: true,
-            leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.list),
-              iconSize: 30.0,
-            ),
-            title: Text(
-              "11tal, intertap road ^",
-              style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.red.shade500),
-            ),
-            actions: [
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.settings),
-                  iconSize: 30.0)
-            ],
-          ),
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.only( left: 10.0, right: 10.0, bottom: 20.0),
+        //   child: AppBar(
+        //     centerTitle: true,
+        //     leading: IconButton(
+        //       onPressed: () {},
+        //       icon: const Icon(Icons.list),
+        //       iconSize: 30.0,
+        //     ),
+        //     title: Text(
+        //       "11tal, intertap road ^",
+        //       style: TextStyle(
+        //           fontSize: 18.0,
+        //           fontWeight: FontWeight.w500,
+        //           color: Colors.red.shade500),
+        //     ),
+        //     actions: [
+        //       IconButton(
+        //           onPressed: () {},
+        //           icon: const Icon(Icons.settings),
+        //           iconSize: 30.0)
+        //     ],
+        //   ),
+        // ),
+
 
 
         // Padding(
@@ -66,7 +67,7 @@ class AppBanner extends StatelessWidget {
 
         // banner section
         Padding(
-            padding: const EdgeInsets.only(top: 0),
+            padding: const EdgeInsets.only(top: 20.0),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ClipRRect(
